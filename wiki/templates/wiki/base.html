@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<hmtl>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        
+        
+    </head>
+    <ul class="nav justify-content-center card">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'wiki:index' %}">
+                <h1 class="container" style="display:inline;">Wiki</h1>
+                <div class="spinner-grow text-success" role="status">
+                </div>
+
+              
+
+               
+            </a>
+        </li>
+    </ul>
+
+
+    <body>
+        {% block content %} There is no content available... :/ {% endblock content %}
+    </body>
+</hmtl>
