@@ -16,4 +16,7 @@
 <a href="{% url 'wiki:index' %}"><button class="btn btn-dark">Index</button></a>
 <a href="{% url 'wiki:edit_page' page.title %}"><button class="btn btn-dark">Edit page</button></a>
 </div>
+<div class="container">
+This page has been visted {{ page.counter }} time/s
+</div>
 {% endblock content %}

@@ -1,34 +1,33 @@
 {% extends "wiki/base.html" %}
 
 {% block content %}
-<div  class="container">
-{% if form.errors %}
-<div class="alert alert-warning">Your username and/or password didn't match. Please try again.</div>
-{% endif %}
-<a href="{% url 'wiki:index' %}" class="btn btn-primary">Index</a>
+<div class="container">
 
-
-
-<form method="post" action="{% url 'wiki:login' %}">
-    {% csrf_token %}
-    <div class="jumbotron">
-        <h1 class="display-4">Log in</h1>
-        <p class="lead">Use this page to log onto the wiki.</p>
-        <hr class="my-4">
-        <table>
-            <tr>
-                <td>{{ form.username.label_tag }}</td>
-                <td>{{ form.username }}</td>
-            </tr>
-            <tr>
-                <td>{{ form.password.label_tag }}</td>
-                <td>{{ form.password }}</td>
-            </tr>
+    <form method="post" action="{% url 'wiki:login' %}">
+        {% csrf_token %}
+        <div class="card" style="margin-top:50px;">
+            <h1>Log in</h1>
+            <p class="lead">Log into your account here</p>
+            <hr>
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
             </table>
-            
-      </div>
-<input class="btn btn-primary" type="submit" value="Login">
-<input type="hidden" name="next" value="{{ next }}">
-</form>
+        </div>
+        <div style="margin-top:10px;">
+            {% if form.errors %}
+            <div class="alert alert-warning">Your username or password is incorrect</div>
+            {% endif %}
+        </div>
+        <a href="{% url 'wiki:index' %}" class="btn btn-dark">Index</a>
+        <input class="btn btn-success" type="submit" value="Login">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
 </div>
 {% endblock %}

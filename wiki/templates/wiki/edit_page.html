@@ -7,13 +7,12 @@
 <div class="container">
     {% block contentTitle %}Edit {{page_name}}{% endblock %}
     <header><h3>{{page_name}}</h3></header>
-    
-    <a href="{% url 'wiki:index' %}"><button class="btn btn-dark">Index</button></a>
     <form method="post" action="{% url 'wiki:save_page' page_name %}">
     {% csrf_token %}
 <textarea id="id_content" name="content" rows="10" cols="40">{{content}}</textarea>
-        <input type="submit" name="Save" value="Save" class="btn btn-dark">
-        <input type='submit' name="Cancel" value="Cancel" class="btn btn-danger">
+    <input type="submit" name="Save" value="Save" class="btn btn-dark">
+    <input type='submit' name="Cancel" value="Cancel" class="btn btn-danger">
+       
     </form>
 </div>
 {% endblock %}
