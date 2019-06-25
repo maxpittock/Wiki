@@ -13,10 +13,10 @@
     <hr>
 </div>
 <div class="container">
-<a href="{% url 'wiki:index' %}"><button class="btn btn-dark">Index</button></a>
-<a href="{% url 'wiki:edit_page' page.title %}"><button class="btn btn-dark">Edit page</button></a>
+<a href="{% url 'wiki:index' %}"><button class="btn btn-dark">Index</button></a> <!--Index Button-->
+<a href="{% url 'wiki:edit_page' page.title %}"><button class="btn btn-dark">Edit page</button></a><!--Edit Page Button-->
 </div>
 <div class="container">
-This page has been visted {{ page.counter }} time/s
+This page has been visted {{ page.counter }} time/s <!--Page counter. Counts how many times someone has visted that page and can remember the amout even after servers closed.-->
 </div>
 {% endblock content %}

@@ -4,6 +4,6 @@ from django.contrib import admin
 
 from .models import Page, UserFileUpload
 
-admin.site.register(Page)
+admin.site.register(Page) #page registered to admin site.
 
-admin.site.register(UserFileUpload)
+admin.site.register(UserFileUpload) #File upload registered to admin site

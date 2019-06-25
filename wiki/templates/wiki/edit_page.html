@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% block pageheader %}Editing {{ page_name }}{% endblock %}
 {% block content %}
+<!--allows for text customisation. I chose this instead of markdown-->
 <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
 <script>tinymce.init({forced_root_block : "", selector:'#id_content', plugins: 'autolink',remove_trailing_brs: false });</script> 
 <div class="container">

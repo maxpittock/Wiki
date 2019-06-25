@@ -10,7 +10,7 @@
 <div class="container">
 
 
-
+<!--Page customisation-->
 {% if pages %}
     <ul class="list-group" style="margin-top:10px;">
     {% for page in pages %}
@@ -21,4 +21,14 @@
 <p>No pages are available at this time.</p>
 {% endif %}
 </div>
+<p class="=text-center" style="font-size:13px">You are currently viewing this page using {{request.META.HTTP_USER_AGENT}}</p>
+
+<p id="SR" class="text-center" style="font-size: 12px"></p>
+<!--Script takes users information (screen resolutin) and displays it to them at the bottom of the index screen-->
+<script>
+    function myFunction() {
+      var x = "Your Screen resolution is currently:\n" + "Total Width: " + screen.width + "px, " + "Total Height: " + screen.height + "px "; 
+      document.getElementById("SR").innerHTML = x;
+    }
+    </script>
 {% endblock content %}

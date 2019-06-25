@@ -1,8 +1,8 @@
-{% extends "wiki/base.html" %}
+{% extends "wiki/base.html" %} <!--Allows this page to access base template.-->
 
 {% block content %}
 <div class="container">
-
+    <!--Customisation for the login page.-->
     <form method="post" action="{% url 'wiki:login' %}">
         {% csrf_token %}
         <div class="card" style="margin-top:50px;">
@@ -11,6 +11,7 @@
             <hr>
             <table>
                 <tr>
+                    <!--Allows user to log in-->
                     <td>{{ form.username.label_tag }}</td>
                     <td>{{ form.username }}</td>
                 </tr>

@@ -19,8 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('wiki/',include('wiki.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #Creates URL for admin page
+    path('polls/', include('polls.urls')), #Creates URL for Polls
+    path('',include('wiki.urls')), #creates URL for wiki
+ 
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #RE

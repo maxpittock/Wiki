@@ -3,7 +3,7 @@
 import os
 import sys
 
-
+#this is the page that allows you to start the server
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
     try:
